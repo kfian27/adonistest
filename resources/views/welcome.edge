@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" style="position:absolute;right:0;">
+                    @loggedIn
+                        <a class="nav-link" href="{{ route('logout') }}">Hello {{ auth.user.name }}</a>
+                    @else
+                        <a class="nav-link" href="{{ route('login.index') }}">Sign Up / Sing In</a>
+                    @endloggedIn
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="https://images.unsplash.com/photo-1590845947670-c009801ffa74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1159&q=80" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://images.unsplash.com/photo-1498598457418-36ef20772bb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://images.unsplash.com/photo-1496304841270-2cb66cf766b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="my-3"></div>
+    <div class="row mx-1 col-12 justify-content-between" style="gap: 100px;">
+        <div class="col-3 p-0 border">
+            <div class="img-thumbnail embed-responsive embed-responsive-1by1">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="embed-responsive-item" style="object-fit: cover;">
+            </div>
+            <h2 class="pt-2 pl-1">Produk Headset</h2>
+            <h5 class="pt-2 pl-1">Rp. 10.000.000</h5>
+        </div>
+        <div class="col-3 p-0 border">
+            <div class="img-thumbnail embed-responsive embed-responsive-1by1">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=799&q=80" class="embed-responsive-item" style="object-fit: cover;">
+            </div>
+            <h2 class="pt-2 pl-1">Produk Jam</h2>
+            <h5 class="pt-2 pl-1">Rp. 30.000.000</h5>
+        </div>
+        <div class="col-3 p-0 border">
+            <div class="img-thumbnail embed-responsive embed-responsive-1by1">
+                <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="embed-responsive-item" style="object-fit: cover;">
+            </div>
+            <h2 class="pt-2 pl-1">Produk Kacamata</h2>
+            <h5 class="pt-2 pl-1">Rp. 5.000.000</h5>
+        </div>
+        <div class="col-3 p-0 border">
+            <div class="img-thumbnail embed-responsive embed-responsive-1by1">
+                <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="embed-responsive-item" style="object-fit: cover;">
+            </div>
+            <h2 class="pt-2 pl-1">Produk Mobil</h2>
+            <h5 class="pt-2 pl-1">Rp. 100.000.000</h5>
+        </div>
+        <div class="col-3 p-0 border">
+            <div class="img-thumbnail embed-responsive embed-responsive-1by1">
+                <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="embed-responsive-item" style="object-fit: cover;">
+            </div>
+            <h2 class="pt-2 pl-1">Produk Mobil</h2>
+            <h5 class="pt-2 pl-1">Rp. 100.000.000</h5>
+        </div>
+        <div class="col-3 p-0 border">
+            <div class="img-thumbnail embed-responsive embed-responsive-1by1">
+                <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="embed-responsive-item" style="object-fit: cover;">
+            </div>
+            <h2 class="pt-2 pl-1">Produk Mobil</h2>
+            <h5 class="pt-2 pl-1">Rp. 100.000.000</h5>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('.carousel').carousel()
+        })
+    </script>
+</body>
+
+</html>
